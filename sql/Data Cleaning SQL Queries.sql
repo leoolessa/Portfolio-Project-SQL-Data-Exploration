@@ -1,6 +1,6 @@
 /*
 
-Cleaning Data inSQL Queries
+Cleaning Data in SQL Queries
 
 */
 
@@ -174,18 +174,3 @@ EXEC sp_rename 'nash_ville.SaleDateConverted', 'SaleDate', 'COLUMN';
 
 
 
-
-
-
-
-Select *
-From PortfolioProject..nash_ville;
-
-
-
- Select a.ParcelID, a.OwnerName, b.ParcelID, b.OwnerName, ISNULL(a.OwnerName, b.OwnerName)
- From PortfolioProject..nash_ville a
-	Join PortfolioProject..nash_ville b
-		on a.ParcelID = b.ParcelID
-		AND a.[UniqueID ] <> b.[UniqueID ]
-Where a.OwnerName is null
